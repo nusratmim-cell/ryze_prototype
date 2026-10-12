@@ -176,7 +176,36 @@ h1{font-size:40px;line-height:1.2;margin:10px 0 0;font-weight:700;text-wrap:bala
 .dbar b{font-size:20px;font-weight:800}
 .dbar button{border:0;background:#000;color:#fff;border-radius:99px;width:141px;padding:17px 0;font-size:11.5px;font-weight:700}
 
-/* Shikho partner page (opens outside the RYZE app, in the phone browser) */
+/* RYZE brand, taken from ryze.live */
+.rz.night{background:#000;color:#fff}
+.night .sub-top h2{color:#fff}
+.night .bk{background:#18191A;color:#fff;border:1px solid #303233}
+.night .lhead{color:#fff}
+.night .lhead small{color:#D0D2D3}
+.n-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:8px 17px 26px}
+.n-card{background:#18191A;border:1px solid #303233;border-radius:12px;padding:10px 10px 14px;text-align:center;color:#fff;display:flex;flex-direction:column;gap:5px}
+.n-card img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;display:block;margin-bottom:5px}
+.n-card b{font-size:13.5px;font-weight:700;line-height:1.3}
+.n-card small{font-size:11px;color:#D0D2D3}
+.n-pill{align-self:center;margin-top:6px;background:linear-gradient(180deg,#9413F1,#560B8B);box-shadow:inset 0 3px 3px rgba(214,200,221,.25),inset 3px 0 3px rgba(214,200,221,.25);color:#fff;border-radius:99px;padding:7px 24px;font-size:11.5px;font-weight:600}
+.night .dh .bk{background:rgba(24,25,26,.75);border:1px solid #303233}
+.night .dsheet{background:#000;border-top:1px solid #303233}
+.night .dsheet .hd,.night .dsheet .acc{color:#fff}
+.night .dsheet p{color:#D0D2D3}
+.night .dpacks button{background:#18191A;border:1px solid #303233;border-radius:12px;color:#fff}
+.night .dpacks button[aria-pressed="true"]{border-color:#9413F1;background:rgba(148,19,241,.24)}
+.night .dpacks small{color:#D0D2D3}
+.night .dactive{background:rgba(148,19,241,.24);border:1px solid #9413F1;border-radius:12px;color:#fff}
+.night .dbar{background:#000;border-top:1px solid #303233}
+.night .dbar small{color:#D0D2D3}
+.night .dbar b{color:#fff}
+.night .dbar button,.night .pill{background:linear-gradient(180deg,#9413F1,#560B8B);box-shadow:inset 0 4px 4px rgba(214,200,221,.25),inset 4px 0 4px rgba(214,200,221,.25);color:#fff}
+.night .big{color:#fff}
+.night .soft-t{color:#D0D2D3}
+.night .tick{background:linear-gradient(180deg,#9413F1,#560B8B);box-shadow:0 0 44px rgba(148,19,241,.65)}
+.night .tick::before{border-color:#fff}
+
+/* Shikho portal (loads in a WebView after payment) */
 .sp .wv+.sp-top{padding-top:12px}
 .sp{display:flex;flex-direction:column;height:100%;background:var(--sk-bg);color:var(--sk-text);font-family:var(--bn)}
 .sp-top{background:#fff;display:flex;align-items:center;gap:12px;padding:28px 18px 14px;font-size:18px;font-weight:500}
@@ -311,10 +340,9 @@ home:function(){return '<div class="rz dark"><div class="hscroll"><img class="sh
  +IMG.svc.map(function(u){return '<img src="'+u+'" alt="">'}).join('')+'</div></div>'
  +'<img class="shot" src="'+IMG.nav+'" alt=""></div>'},
 learn:function(){
- return '<div class="rz"><div class="sub-top"><button class="bk" data-go="home" aria-label="Back">&#8592;</button><h2>Learning</h2></div>'
- +'<div class="sub-body"><div class="find" style="margin-top:0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search courses</div><span class="allchip">All</span>'
- +'<div class="lhead"><span class="lg"><img src="'+IMG.bird+'" alt=""></span><span>Shikho<small>Watch a free lesson, then buy a pack</small></span></div>'
- +C.map(function(c,i){return '<button class="srow" data-lc="'+i+'"><span class="lg pic"><img src="'+IMG.vt[i]+'" alt=""></span><span class="nm"><b>'+c[0]+'</b><small>'+c[1]+' Mathematics</small></span><span class="rt"><span class="get">View</span><small>from TK '+PRICE[7]+'</small></span></button>'}).join('')
+ return '<div class="rz night"><div class="sub-top"><button class="bk" data-go="home" aria-label="Back">&#8592;</button><h2>Learning</h2></div>'
+ +'<div class="sub-body"><div class="lhead" style="margin-top:6px"><span class="lg"><img src="'+IMG.bird+'" alt=""></span><span>Shikho<small>Watch a free video, then buy a pack</small></span></div>'
+ +'<div class="n-grid">'+C.map(function(c,i){return '<button class="n-card" data-lc="'+i+'"><img src="'+IMG.vt[i]+'" alt=""><b>'+c[0]+'</b><small>'+c[1]+' · from TK '+PRICE[7]+'</small><span class="n-pill">View</span></button>'}).join('')+'</div>'
  +'</div></div>'},
 list:function(){var body;
  function row(i,d,act,label){var c=C[i];return '<button class="srow" '+act+'><span class="lg"><img src="'+IMG.bird+'" alt=""></span><span class="nm"><b>Shikho</b><small>'+c[0]+' · '+c[1]+'</small></span><span class="rt"><span class="get">'+label+'</span><small>TK '+PRICE[d]+' / '+d+' Days</small></span></button>'}
@@ -333,7 +361,7 @@ video:function(){var c=C[S.course];
   :'<div class="sp-packs"><p>আরো ভিডিও দেখতে কোর্স কিনে নাও</p>'+[7,30].map(function(d){return '<button class="sp-pack" data-pack="'+d+'"><img src="'+IMG.vt[S.course]+'" alt=""><div><b>'+c[3]+'</b><span>কোর্সের মেয়াদ '+bn(d)+' দিন</span><em>মাত্র ৳'+bn(PRICE[d])+'</em></div></button>'}).join('')+'</div>')
  +'</div></div>'},
 course:function(){var c=C[S.course];
- return '<div class="rz"><div class="dh" style="background-image:url('+IMG.vt[S.course]+')"><div class="sub-top"><button class="bk" data-go="'+S.from+'" aria-label="Back">&#8592;</button><h2>Shikho</h2></div><span class="dplay"></span><span class="dfree">Free video</span></div>'
+ return '<div class="rz night"><div class="dh" style="background-image:url('+IMG.vt[S.course]+')"><div class="sub-top"><button class="bk" data-go="'+S.from+'" aria-label="Back">&#8592;</button><h2>Shikho</h2></div><span class="dplay"></span><span class="dfree">Free video</span></div>'
  +'<div class="dsheet"><div class="hd"><span class="lg"><img src="'+IMG.bird+'" alt=""></span><span>Shikho</span></div><p>Buy Add-on</p>'
  +'<div class="acc"><span>'+c[0]+'</span><span>&#8963;</span></div>'
  +'<p>'+c[1]+' Mathematics with Shikho teachers. Watch the free video, then choose a pack for the full course.</p>'
@@ -342,7 +370,7 @@ course:function(){var c=C[S.course];
  +'</div>'
  +(S.bought&&!S.more?'<div class="dbar"><div><small>Shikho</small><b>'+S.days+' Days</b></div><button data-go="signin">Continue</button></div>'
    :'<div class="dbar"><div><small>Price</small><b>TK '+PRICE[S.pack]+'</b></div><button data-buy="1">Get</button></div>')+'</div>'},
-success:function(){return '<div class="rz"><div class="mid">'+logo(110,'#9413F1')+'<span class="tick"></span><p class="big">Purchase successful</p>'
+success:function(){return '<div class="rz night"><div class="mid">'+logo(110,'#fff')+'<span class="tick"></span><p class="big">Purchase successful</p>'
  +'<p class="soft-t">Shikho · '+C[S.course][0]+' · '+S.pack+' Days</p>'+(S.days>S.pack?'<p class="big" style="font-size:18px">Total access now: '+S.days+' days</p>':'')+''
  +'<button class="pill wide" data-go="signin">Continue</button></div></div>'},
 leave:function(){setTimeout(function(){if(S.scr==='leave')go('portal')},1200);
