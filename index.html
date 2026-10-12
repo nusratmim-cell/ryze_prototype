@@ -330,7 +330,7 @@ var TILE='<span class="tile"><img src="'+IMG.bird+'" alt="Shikho"></span>';
 var BN='০১২৩৪৫৬৭৮৯',MON=['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
 function bn(n){return String(n).replace(/\d/g,function(d){return BN[d]})}
 function untilBn(){var d=new Date();d.setDate(d.getDate()+(S.days||S.pack));return bn(d.getDate())+' '+MON[d.getMonth()]+' '+bn(d.getFullYear())}
-var WV='<div class="wv"><button data-go="course" aria-label="Close" style="background:none;border:0;padding:0;font-size:18px">&#10005;</button>Shikho<small>WebView</small></div>';
+var WV='<div class="wv"><button data-go="course" aria-label="Close" style="background:none;border:0;padding:0;font-size:18px">&#10005;</button>Shikho</div>';
 function spTop(){return WV+'<div class="sp-top"><span>'+C[S.course][3]+'</span></div>'}
 function info(){var c=C[S.course];return '<div class="sp-vwrap"><img class="sp-video" src="'+IMG.vt[S.course]+'" alt="Free video"></div><div class="sp-info"><h3>'+c[4]+'</h3><p>'+c[5]+'</p></div>'}
 
